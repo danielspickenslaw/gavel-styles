@@ -1,4 +1,4 @@
-html, body { background: #ff00ff !important; }
+```css
 /* ========= “Awesome Intake” theme (drop-in) =========
    Works best when injected as Custom CSS at the form/page level.
    Designed to be safe even when you don't know platform classnames.
@@ -338,3 +338,62 @@ hr{
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent) !important;
   margin: 14px 0 !important;
 }
+
+/* ===== Gavel intake readability fixes ===== */
+
+/* 1) Ensure all form text inherits the light theme */
+body, form, fieldset, section, legend, label, p, span, div {
+  color: var(--text) !important;
+}
+
+/* 2) Inputs: make typed text + placeholders visible */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="search"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  color: #0b1220 !important;              /* typed text */
+  background: #ffffff !important;         /* field background */
+  border: 1px solid rgba(0,0,0,.18) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(15, 23, 42, .55) !important; /* placeholder */
+}
+
+/* 3) If Gavel renders “radio options” as white pills, force label text dark */
+label, .option, .choice,
+[class*="option"], [class*="choice"] {
+  color: #0b1220 !important;
+}
+
+/* 4) Any pill/option containers that are white: keep text dark */
+.option *, .choice *,
+[class*="option"] *, [class*="choice"] * {
+  color: #0b1220 !important;
+}
+
+/* 5) Fix disabled/selected states (common for multi-step choice lists) */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  color: rgba(15, 23, 42, .55) !important;
+  background: rgba(255,255,255,.75) !important;
+}
+
+/* 6) Selected choice highlight: keep text readable */
+.option[aria-selected="true"],
+.choice[aria-selected="true"],
+[class*="option"][aria-selected="true"],
+[class*="choice"][aria-selected="true"]{
+  background: rgba(6,182,212,.12) !important;
+  border-color: rgba(6,182,212,.45) !important;
+}
+```
