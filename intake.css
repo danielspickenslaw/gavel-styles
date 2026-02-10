@@ -3,7 +3,6 @@
    Works best when injected as Custom CSS at the form/page level.
    Designed to be safe even when you don't know platform classnames.
 */
-
 /* --- Theme tokens --- */
 :root{
   --bg1:#0b1220;
@@ -397,3 +396,43 @@ textarea:disabled {
   border-color: rgba(6,182,212,.45) !important;
 }
 ```
+/* ===== Fix white pill options / invisible choice text (Docassemble/Gavel) ===== */
+
+/* Target common Docassemble/Gavel choice list wrappers */
+.da-question,
+.da-field-container,
+.da-field,
+.da-fieldset,
+.da-legend,
+.da-fieldset .list-group,
+.da-fieldset .list-group-item,
+.list-group,
+.list-group-item {
+  color: var(--text) !important;
+}
+
+/* Make option rows NOT white; use dark cards */
+.list-group-item,
+.list-group-item label,
+.list-group-item .label,
+.list-group-item span,
+.list-group-item div,
+fieldset .list-group-item,
+fieldset .list-group-item * {
+  background: rgba(255,255,255,.04) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+}
+
+/* If the option row is actually the label itself */
+label.list-group-item,
+label.btn,
+label.btn-default,
+label.btn-primary,
+label.btn-secondary {
+  background: rgba(255,255,255,.04) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+}
+
+/* Ensure any nested text is visib*
