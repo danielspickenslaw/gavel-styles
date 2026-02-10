@@ -1,3 +1,4 @@
+html, body { background: #ff00ff !important; }
 /* ========= “Awesome Intake” theme (drop-in) =========
    Works best when injected as Custom CSS at the form/page level.
    Designed to be safe even when you don't know platform classnames.
